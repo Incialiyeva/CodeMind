@@ -1,29 +1,71 @@
+/** Arka plan için degrade ve yumuşak bir desen efekti **/
 .welcome-main {
   min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+  background: linear-gradient(135deg, #e0e7ef 0%, #f8fafc 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-main::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at 20% 30%, #6c63ff33 0%, transparent 60%),
+              radial-gradient(circle at 80% 70%, #ff41f833 0%, transparent 60%);
+  z-index: 0;
 }
 
 .welcome-card {
-  background: #fff;
+  position: relative;
+  background: rgba(255, 255, 255, 0.80);
   border-radius: 1.5rem;
-  box-shadow: 0 4px 32px 0 rgba(60, 72, 100, 0.10);
-  padding: 2.5rem 2rem 2rem 2rem;
-  max-width: 420px;
+  box-shadow: 0 8px 32px 0 rgba(60, 72, 100, 0.15), 0 0 0 2px #ff41f822;
+  padding: 1.5rem 1.1rem 1.1rem 1.1rem;
+  max-width: 410px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.1rem;
+  backdrop-filter: blur(8px) saturate(1.1);
+  border: 1.2px solid #e0e7ef;
+  z-index: 1;
+  animation: fadeInCard 1.1s cubic-bezier(.4,0,.2,1);
+  transition: box-shadow 0.3s;
+}
+.welcome-card:hover {
+  box-shadow: 0 8px 32px 0 #6c63ff33, 0 0 0 4px #ff41f855;
+}
+
+@keyframes fadeInCard {
+  from { opacity: 0; transform: translateY(40px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
 }
 
 h1 {
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: 1.35rem;
+  font-weight: 900;
+  margin-bottom: 0.1rem;
+  letter-spacing: -0.03em;
+  text-align: center;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #6c63ff, #ff41f8, #6c63ff 80%);
+  background-size: 200% auto;
   color: #2d3748;
-  margin-bottom: 0.2rem;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3.5s linear infinite alternate;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 .highlight {
@@ -31,26 +73,45 @@ h1 {
   background: linear-gradient(90deg, #6c63ff 40%, #ff41f8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 900;
 }
 
 .project-title {
-  font-size: 1.3rem;
-  color: #6c63ff;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-size: 1.01rem;
+  color: #ff41f8;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 8px #ff41f822;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(90deg, #ff41f8 40%, #6c63ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .description {
   color: #4a5568;
-  font-size: 1rem;
+  font-size: 0.93rem;
   text-align: center;
+  background: rgba(255,255,255,0.6);
+  border-radius: 0.9rem;
+  padding: 0.5rem 0.7rem;
+  box-shadow: 0 1px 8px 0 #6c63ff11;
+  border: 1px solid #e0e7ef;
 }
 
 .tech-list {
   width: 100%;
   text-align: left;
-  font-size: 1rem;
+  font-size: 0.93rem;
   color: #374151;
+  background: rgba(245,245,255,0.8);
+  border-radius: 0.9rem;
+  padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+  box-shadow: 0 1px 8px 0 #6c63ff0a;
+  border: 1px solid #e0e7ef;
 }
 
 .tech-list ul {
@@ -60,6 +121,28 @@ h1 {
 
 .tech-list li {
   margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+  position: relative;
+  font-size: 0.93rem;
+}
+
+.tech-list li.angular::before {
+  content: '🅰️';
+  font-size: 1.1em;
+  margin-right: 0.3em;
+}
+.tech-list li.monaco::before {
+  content: '💻';
+  font-size: 1.1em;
+  margin-right: 0.3em;
+}
+.tech-list li.node::before {
+  content: '🟩';
+  font-size: 1.1em;
+  margin-right: 0.3em;
 }
 
 .optional {
@@ -69,41 +152,91 @@ h1 {
 
 .monaco-placeholder {
   width: 100%;
-  margin-top: 1.2rem;
+  margin-top: 0.7rem;
 }
 
 .monaco-label {
   display: block;
-  font-size: 0.98rem;
+  font-size: 0.93rem;
   color: #6c63ff;
-  margin-bottom: 0.3rem;
-  font-weight: 500;
+  margin-bottom: 0.1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
 .monaco-mockup {
-  background: #181c24;
+  background: linear-gradient(120deg, #232946 60%, #6c63ff 100%);
   border-radius: 0.7rem;
-  min-height: 120px;
+  min-height: 60px;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  padding: 1rem;
+  padding: 0 0 1.1rem 0;
   color: #fff;
   font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
-  font-size: 1rem;
-  box-shadow: 0 2px 12px 0 rgba(60, 72, 100, 0.08);
+  font-size: 0.93rem;
+  box-shadow: 0 2px 24px 0 #6c63ff22;
+  border: 2px solid #6c63ff33;
+  position: relative;
+  overflow: hidden;
 }
+
+.monaco-mockup .window-bar {
+  width: 100%;
+  height: 1.2rem;
+  background: linear-gradient(90deg, #232946 60%, #6c63ff 100%);
+  border-radius: 0.7rem 0.7rem 0 0;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  gap: 0.5rem;
+  position: relative;
+  border-bottom: 1px solid #6c63ff44;
+}
+
+.monaco-mockup .window-btn {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+  display: inline-block;
+}
+.monaco-mockup .window-btn.red { background: #ff5f56; }
+.monaco-mockup .window-btn.yellow { background: #ffbd2e; }
+.monaco-mockup .window-btn.green { background: #27c93f; }
 
 .monaco-mock-text {
-  opacity: 0.7;
+  opacity: 0.85;
+  font-size: 0.93rem;
+  letter-spacing: 0.01em;
+  z-index: 1;
+  padding: 0.3rem 0.7rem 0 0.7rem;
 }
 
-@media (max-width: 600px) {
+.monaco-mockup:hover {
+  box-shadow: 0 4px 32px 0 #6c63ff55;
+  border-color: #ff41f8;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+@media (max-width: 700px) {
   .welcome-card {
-    padding: 1.2rem 0.5rem;
-    max-width: 98vw;
+    padding: 0.7rem 0.2rem;
+    max-width: 99vw;
+    gap: 0.7rem;
+  }
+  h1 {
+    font-size: 1.01rem;
+  }
+  .project-title {
+    font-size: 0.93rem;
   }
   .monaco-mockup {
-    min-height: 80px;
-    font-size: 0.95rem;
+    min-height: 40px;
+    font-size: 0.89rem;
+  }
+  .monaco-mock-text {
+    font-size: 0.89rem;
+    padding: 0.2rem 0.4rem 0 0.4rem;
   }
 }
