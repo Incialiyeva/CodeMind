@@ -219,6 +219,44 @@ h1 {
   transition: box-shadow 0.3s, border-color 0.3s;
 }
 
+.github-footer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  position: absolute;
+  left: 0;
+  bottom: 1.2rem;
+  z-index: 2;
+}
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: #fff;
+  color: #181717;
+  border-radius: 2em;
+  padding: 0.5em 1.2em;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 12px 0 #6c63ff11;
+  border: 1.2px solid #e0e7ef;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+}
+.github-link:hover {
+  background: linear-gradient(90deg, #6c63ff 40%, #ff41f8 100%);
+  color: #fff;
+  box-shadow: 0 4px 24px 0 #6c63ff33;
+  border-color: #ff41f8;
+}
+.github-link svg path {
+  transition: fill 0.2s;
+}
+.github-link:hover svg path {
+  fill: #fff;
+}
 @media (max-width: 700px) {
   .welcome-card {
     padding: 0.7rem 0.2rem;
@@ -238,5 +276,12 @@ h1 {
   .monaco-mock-text {
     font-size: 0.89rem;
     padding: 0.2rem 0.4rem 0 0.4rem;
+  }
+  .github-footer {
+    bottom: 0.3rem;
+  }
+  .github-link {
+    font-size: 0.93rem;
+    padding: 0.4em 0.7em;
   }
 }
