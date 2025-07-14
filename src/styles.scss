@@ -1,1 +1,214 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Fira+Mono:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background: linear-gradient(135deg, #181c2f 0%, #232946 100%);
+  color: #f3f4f6;
+  min-height: 100vh;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2.5rem 1.2rem 2.5rem;
+  background: rgba(24,28,47,0.95);
+  box-shadow: 0 2px 16px 0 #23294633;
+}
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #6c63ff;
+  text-shadow: 0 2px 8px #6c63ff33;
+}
+.navbar .nav-links a {
+  color: #f3f4f6;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 2rem;
+  font-size: 1.05rem;
+  transition: color 0.2s;
+}
+.navbar .nav-links a.cta {
+  background: linear-gradient(90deg, #6c63ff 40%, #ff41f8 100%);
+  color: #fff;
+  padding: 0.5em 1.3em;
+  border-radius: 2em;
+  font-weight: 700;
+  margin-left: 2.5rem;
+  box-shadow: 0 2px 12px 0 #6c63ff22;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+}
+.navbar .nav-links a.cta:hover {
+  background: linear-gradient(90deg, #ff41f8 40%, #6c63ff 100%);
+  color: #fff;
+}
+.main-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  padding: 2.5rem 1rem 1rem 1rem;
+}
+.main-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #6c63ff, #ff41f8, #6c63ff 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3.5s linear infinite alternate;
+  margin-bottom: 1.1rem;
+  letter-spacing: -0.02em;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+.main-hero p {
+  font-size: 1.18rem;
+  color: #c7c9d9;
+  margin-bottom: 2.2rem;
+  max-width: 540px;
+}
+.editor-mockup {
+  background: linear-gradient(120deg, #232946 60%, #6c63ff 100%);
+  border-radius: 1.1rem;
+  min-height: 120px;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto 2.5rem auto;
+  box-shadow: 0 2px 24px 0 #6c63ff22;
+  border: 2px solid #6c63ff33;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  color: #fff;
+  font-size: 1.05rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.editor-mockup .window-bar {
+  width: 100%;
+  height: 1.5rem;
+  background: linear-gradient(90deg, #232946 60%, #6c63ff 100%);
+  border-radius: 1.1rem 1.1rem 0 0;
+  display: flex;
+  align-items: center;
+  padding: 0 0.7rem;
+  gap: 0.5rem;
+  border-bottom: 1px solid #6c63ff44;
+}
+.editor-mockup .window-btn {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+  display: inline-block;
+}
+.editor-mockup .window-btn.red { background: #ff5f56; }
+.editor-mockup .window-btn.yellow { background: #ffbd2e; }
+.editor-mockup .window-btn.green { background: #27c93f; }
+.editor-mockup pre {
+  margin: 0;
+  padding: 0.7rem 1.2rem 1.2rem 1.2rem;
+  opacity: 0.92;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  width: 100%;
+  box-sizing: border-box;
+}
+.features {
+  margin: 2.5rem auto 1.5rem auto;
+  max-width: 600px;
+  background: rgba(36, 40, 62, 0.85);
+  border-radius: 1rem;
+  padding: 1.5rem 1.2rem;
+  box-shadow: 0 2px 16px 0 #6c63ff11;
+  border: 1.2px solid #232946;
+}
+.features h2 {
+  color: #ff41f8;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+}
+.features li {
+  background: #232946;
+  border-radius: 0.7rem;
+  padding: 0.7rem 1.2rem;
+  color: #c7c9d9;
+  font-weight: 500;
+  font-size: 1.05rem;
+  box-shadow: 0 1px 8px 0 #6c63ff11;
+  border: 1px solid #6c63ff33;
+  min-width: 120px;
+  text-align: center;
+}
+.footer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;
+  padding-bottom: 1.5rem;
+  color: #c7c9d9;
+  font-size: 1rem;
+}
+.footer .github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: #232946;
+  color: #fff;
+  border-radius: 2em;
+  padding: 0.5em 1.2em;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 12px 0 #6c63ff11;
+  border: 1.2px solid #6c63ff;
+  text-decoration: none;
+  margin-bottom: 0.7rem;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+}
+.footer .github-link:hover {
+  background: linear-gradient(90deg, #6c63ff 40%, #ff41f8 100%);
+  color: #fff;
+  box-shadow: 0 4px 24px 0 #6c63ff33;
+  border-color: #ff41f8;
+}
+.footer .github-link svg path {
+  transition: fill 0.2s;
+}
+.footer .github-link:hover svg path {
+  fill: #fff;
+}
+.footer .contributors {
+  margin-top: 0.5rem;
+  color: #a0aec0;
+  font-size: 0.97rem;
+}
+@media (max-width: 700px) {
+  .navbar { padding: 1rem 0.7rem; }
+  .main-hero h1 { font-size: 1.3rem; }
+  .main-hero p { font-size: 1rem; }
+  .editor-mockup { font-size: 0.93rem; min-height: 70px; }
+  .features { padding: 1rem 0.3rem; }
+  .features ul { gap: 0.5rem; }
+  .features li { font-size: 0.93rem; min-width: 90px; padding: 0.5rem 0.7rem; }
+}
