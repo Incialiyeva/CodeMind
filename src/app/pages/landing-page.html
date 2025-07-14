@@ -1,52 +1,74 @@
-<div class="landing-bg">
-  <div class="landing-container">
-    <header class="navbar">
-      <div class="logo">CodeMind</div>
-      <nav class="nav-links">
-        <a href="#" class="active">Home</a>
-        <a href="#">Features</a>
-        <a href="#">Docs</a>
-        <a href="#">Pricing</a>
-        <a class="login-btn" (click)="goToLogin()" type="button">Login / Register</a>
-      </nav>
-    </header>
-    <main class="main-flex">
-      <section class="main-left">
-        <span class="tag">Monaco ile Kod Editörü</span>
-        <h1>
-          Fikirlerini <span class="highlight">Koda</span> Dönüştür,<br>
-          <span class="highlight">Anında</span> Başla!
-        </h1>
-        <p class="desc">
-          CodeMind, yaratıcı fikirlerinizi modern ve güçlü bir editörde anında koda dönüştürmenizi sağlar.<br>
-          Hızlı, sezgisel ve tamamen web tabanlı kod editörü deneyimi.
-        </p>
-        <div class="cta-buttons">
-          <button class="primary">Editöre Başla</button>
-          <button class="secondary">Github</button>
-        </div>
-      </section>
-      <section class="main-right">
-        <div class="editor-mockup">
-          <div class="window-bar">
-            <span class="window-btn red"></span>
-            <span class="window-btn yellow"></span>
-            <span class="window-btn green"></span>
-          </div>
-          <pre class="code-sample">
-<span class="code-keyword">function</span> <span class="code-fn">helloWorld</span>() &#123;
-  <span class="code-keyword">console</span>.log(<span class="code-string">'Hello, CodeMind!'</span>);
-&#125;
-          </pre>
-        </div>
-        <div class="idea-box">
-          <input type="text" placeholder="Proje fikrini buraya yazın..." />
-          <button class="ai-btn">AI ile Oluştur</button>
-        </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <span>© 2024 CodeMind. Powered by Monaco Editor.</span>
-    </footer>
+<div class="landing-bg"></div>
+<nav class="navbar glassy-navbar">
+  <div class="navbar-left">
+    <img src="https://svgshare.com/i/14hA.svg" alt="CodeMind Logo" class="logo-img" />
+    <span class="logo-text">CodeMind</span>
   </div>
-</div>
+  <div class="navbar-center">
+    <a class="nav-link active">Home</a>
+    <a class="nav-link">Solutions</a>
+    <a class="nav-link">Developer</a>
+    <a class="nav-link">Blog</a>
+    <a class="nav-link">Pricing</a>
+  </div>
+  <div class="navbar-right">
+    <button class="login-btn" (click)="goToLogin()" type="button">Login or Register</button>
+  </div>
+</nav>
+
+<main class="orbit-hero">
+  <section class="hero-left">
+    <span class="badge badge-top">&lt;Write your ideas down&gt;</span>
+    <h1 class="orbit-title">
+      Turn Ideas <span class="gradient-text">Into Code</span>,<br />
+      At The <span class="gradient-text">Speed Of Thought</span>
+    </h1>
+    <span class="badge badge-bottom">&lt;/Publish when you're ready&gt;</span>
+    <p class="orbit-desc">
+      Our platform translates your creative ideas into clean, scalable code.<br />
+      So you can focus on solving problems, not building from scratch.
+    </p>
+    <div class="orbit-buttons">
+      <button class="orbit-btn orbit-btn-dark">
+        <span class="btn-icon mac-icon"></span> Download for Mac
+      </button>
+      <button class="orbit-btn orbit-btn-glass">
+        <span class="btn-icon win-icon"></span> Join Windows Beta Access
+      </button>
+    </div>
+    <div class="orbit-meta">v1.0.3 | macOS 10+ | Install via homebrew</div>
+  </section>
+  <section class="hero-right">
+    <div class="editor-mockup glassy-editor">
+      <div class="window-bar">
+        <span class="window-btn red"></span>
+        <span class="window-btn yellow"></span>
+        <span class="window-btn green"></span>
+      </div>
+      <pre class="code-sample orbit-code">
+<span class="code-keyword">Const</span> PluckDeep = Key =&gt; Obj =&gt;
+  Key.Split('.')
+    .Reduce((Accum, Key) =&gt; Accum[Key], Obj)
+
+<span class="code-keyword">Const</span> Compose = (...Fns) =&gt; Res =&gt;
+  Fns.<span class="code-fn">Reduce</span>((Accum, Next) =&gt; Next(Accum), Res)
+
+<span class="code-keyword">Const</span> Unfold = (F, Seed) =&gt; {{ '{' }}
+  <span class="code-keyword">Const</span> Go = (F, Seed, Acc) =&gt; {{ '{' }}
+    <span class="code-keyword">Const</span> Res = F(Seed)
+    <span class="code-keyword">Return</span> Res ? Go(F, Res[1], Acc.Concat([Res[0]])) : Acc
+  {{ '}' }}
+  <span class="code-keyword">Return</span> Go(F, Seed, [])
+{{ '}' }}
+      </pre>
+      <div class="idea-box glassy-idea">
+        <span class="idea-label">Write Your Ideas</span>
+        <input type="text" placeholder="Describe your project idea here..." />
+        <span class="idea-icon mic-icon"></span>
+      </div>
+      <div class="editor-meta">
+        Use Template | Connect to Git | Claude AI
+      </div>
+    </div>
+  </section>
+</main>
