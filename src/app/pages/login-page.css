@@ -1,0 +1,202 @@
+.login-page-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(120deg, #181c2f 0%, #6c63ff 60%, #ff41f8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1000;
+}
+.login-page-content {
+  background: rgba(30, 32, 50, 0.98);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px #6c63ff44, 0 2px 24px #0008;
+  padding: 2.5rem 2.2rem 2rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 340px;
+  max-width: 95vw;
+  min-height: 540px;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.3rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.1rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  z-index: 3;
+}
+.close-btn:hover { opacity: 1; }
+.login-page-content h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.2rem;
+  margin-top: 0.2rem;
+}
+.login-page-content p {
+  color: #bfcfff;
+  margin-bottom: 1.2rem;
+}
+.login-provider {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.08rem;
+  font-weight: 700;
+  padding: 0.7rem 1.2rem;
+  margin-bottom: 0.7rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px #23294622;
+}
+.login-provider.google {
+  background: #fff;
+  color: #232946;
+}
+.login-provider.google:hover {
+  background: #e8e8e8;
+}
+.icon-google {
+  width: 1.3rem; height: 1.3rem;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg') no-repeat center/contain;
+  display: inline-block;
+}
+.login-provider.github {
+  background: #232946;
+  color: #fff;
+  border: 1.5px solid #fff2;
+}
+.login-provider.github:hover {
+  background: #181c2f;
+}
+.icon-github {
+  width: 1.3rem; height: 1.3rem;
+  background: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg') no-repeat center/contain;
+  display: inline-block;
+}
+.login-provider.apple {
+  background: #181c2f;
+  color: #fff;
+  border: 1.5px solid #fff2;
+}
+.login-provider.apple:hover {
+  background: #232946;
+}
+.icon-apple {
+  width: 1.3rem; height: 1.3rem;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg') no-repeat center/contain;
+  display: inline-block;
+}
+.or-divider {
+  text-align: center;
+  color: #bfcfff;
+  opacity: 0.7;
+  margin: 1.1rem 0 1.1rem 0;
+  position: relative;
+}
+.or-divider span {
+  background: #181c2f;
+  padding: 0 1.1rem;
+  position: relative;
+  z-index: 2;
+}
+.or-divider:before, .or-divider:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #fff2;
+}
+.or-divider:before { left: 0; }
+.or-divider:after { right: 0; }
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.login-form label {
+  color: #bfcfff;
+  font-size: 1.01rem;
+  margin-bottom: 0.1rem;
+  margin-top: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.login-form input[type="email"], .login-form input[type="password"] {
+  background: #232946;
+  color: #fff;
+  border: 1.5px solid #6c63ff;
+  border-radius: 0.7rem;
+  padding: 0.7rem 1.1rem;
+  font-size: 1.08rem;
+  margin-bottom: 0.2rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.login-form input[type="email"]:focus, .login-form input[type="password"]:focus {
+  border: 1.5px solid #ff41f8;
+  box-shadow: 0 2px 12px #ff41f822;
+}
+.login-submit {
+  background: linear-gradient(90deg, #6c63ff 60%, #ff41f8 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.8rem 1.2rem;
+  font-weight: 700;
+  font-size: 1.13rem;
+  margin-top: 0.7rem;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #6c63ff33;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.login-submit:hover {
+  background: linear-gradient(90deg, #5548d9 60%, #ff41f8 100%);
+  box-shadow: 0 4px 16px #ff41f855;
+}
+.forgot-link {
+  color: #a7bfff;
+  font-size: 0.98rem;
+  text-decoration: none;
+  opacity: 0.8;
+  margin-left: 0.7rem;
+  transition: color 0.2s;
+}
+.forgot-link:hover { color: #ff41f8; opacity: 1; }
+.signup-row {
+  text-align: center;
+  color: #bfcfff;
+  margin-top: 1.2rem;
+  font-size: 1.01rem;
+}
+.signup-row a {
+  color: #ff41f8;
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 0.3rem;
+  transition: color 0.2s;
+}
+.signup-row a:hover { color: #6c63ff; }
+@media (max-width: 700px) {
+  .login-page-content {
+    width: 100vw;
+    border-radius: 0;
+    min-height: 100vh;
+    padding: 2rem 1rem 2rem 1rem;
+  }
+} 

@@ -7,11 +7,11 @@
         <a href="#">Features</a>
         <a href="#">Docs</a>
         <a href="#">Pricing</a>
-        <button class="login-btn">Login / Register</button>
+        <a class="login-btn" (click)="goToLogin()" type="button">Login / Register</a>
       </nav>
     </header>
-    <main class="hero-section">
-      <section class="hero-text">
+    <main class="main-flex">
+      <section class="main-left">
         <span class="tag">Monaco ile Kod Editörü</span>
         <h1>
           Fikirlerini <span class="highlight">Koda</span> Dönüştür,<br>
@@ -26,19 +26,21 @@
           <button class="secondary">Github</button>
         </div>
       </section>
-      <section class="editor-mockup">
-        <div class="window-bar">
-          <span class="window-btn red"></span>
-          <span class="window-btn yellow"></span>
-          <span class="window-btn green"></span>
-        </div>
-        <pre class="code-sample">
+      <section class="main-right">
+        <div class="editor-mockup">
+          <div class="window-bar">
+            <span class="window-btn red"></span>
+            <span class="window-btn yellow"></span>
+            <span class="window-btn green"></span>
+          </div>
+          <pre class="code-sample">
 <span class="code-keyword">function</span> <span class="code-fn">helloWorld</span>() &#123;
   <span class="code-keyword">console</span>.log(<span class="code-string">'Hello, CodeMind!'</span>);
 &#125;
-        </pre>
-        <div class="editor-footer">
-          <input type="text" placeholder="Proje fikrini buraya yaz..." />
+          </pre>
+        </div>
+        <div class="idea-box">
+          <input type="text" placeholder="Proje fikrini buraya yazın..." />
           <button class="ai-btn">AI ile Oluştur</button>
         </div>
       </section>
