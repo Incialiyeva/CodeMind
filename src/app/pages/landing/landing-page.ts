@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.html',
-  styleUrl: './landing-page.css',
   standalone: true
 })
 export class LandingPage {
@@ -14,3 +13,4 @@ export class LandingPage {
     this.router.navigate(['/login']);
   }
 }
+
